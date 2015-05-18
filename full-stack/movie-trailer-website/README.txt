@@ -1,10 +1,18 @@
 Project Title: Movie Trailer Website
+
 Project Purpose: To complete the first project requirements for the Full Stack Web Developer Nanodegree as laid out by Udacity.
+
 Project Description: This project takes a list of movie and television id's from themoviedb.org and uses its corresponding API 
 to pull relevant details related to the content and stores that data in a class.  From this list of classes, two webpages are 
 dynamically generated using preconfigured content provided by Udacity which was further edited by the author.  The webpages 
 are stored in the same location as the python scripts and one is automatically opened on the users computer.
-Module Connections: my_entertainment_center.py references create_media.py and my_favorites.py.  It is the only script that
+
+I modified the overall structure of the original project to make it easier to add content.  I didn't want to manually create
+an instance of a class and traverse the web to find the corresponding information, images, and videos everytime I wanted to
+add a new piece of content that I liked.  While more work, I feel that this solution is more robust both for adding content or
+adding more information about that content post hoc.  
+
+Project Connections: my_entertainment_center.py references create_media.py and my_favorites.py.  It is the only script that
 needs to be run to generate the webpages.
 
 Project Contents:
