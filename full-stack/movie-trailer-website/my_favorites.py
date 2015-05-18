@@ -70,6 +70,10 @@ script_content = '''
             $(this).next("div").show("fast", showNext);
           });
         });
+        // Activates the popover data-toggles
+        $(document).ready(function () {
+          $('[data-toggle="popover"]').popover();
+        });
 '''
 
 # HTML page head
@@ -86,11 +90,6 @@ main_page_head = '''
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="modal.js"></script>
-    <script type="text/javascript" charset="utf-8">
-        $(function () {
-          $('[data-toggle="popover"]').popover()
-        })
-    </script>
     
 </head>
 '''
@@ -163,6 +162,8 @@ tv_nav_list = '''
     <li class="active"><a href="tv.html">Television<span class="sr-only">(current)</span></a></li>
 '''
 
+
+# Replaces the placeholders of content_tile with the appropriate values for each piece of content
 def create_content_tiles(tiles):
     # The HTML content for this section of the page
     content = ''
@@ -182,14 +183,16 @@ def create_content_tiles(tiles):
         
     return content
 
+# Takes a list of movies of class create_media.Movie and a list of tv series of class
+# create_media.Television and creates a webpage based on each list
 def create_website(movies, tv_series):
-  # Create or overwrite the files
+  # Creates or overwrites the files
   movie_html_file = open('movie.html', 'w')
   tv_html_file = open('tv.html', 'w')
   css_file = open('main.css', 'w')
   script_file = open('modal.js', 'w')
 
-  # Replace the placeholder for the movie tiles with the actual dynamically generated content
+  # Replaces the placeholder for the content_tiles with the actual dynamically generated content
   movie_rendered_content = main_page_content.format(content_tiles=create_content_tiles(movies),nav_list=movie_nav_list)
   tv_rendered_content = main_page_content.format(content_tiles=create_content_tiles(tv_series),nav_list=tv_nav_list)    
 

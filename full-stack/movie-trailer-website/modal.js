@@ -22,3 +22,6 @@
             $(this).next("div").show("fast", showNext);
           });
         });
+        $(document).ready(function () {
+          $('[data-toggle="popover"]').popover();
+        });
