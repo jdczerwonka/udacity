@@ -1,0 +1,91 @@
+
+<head>
+    <meta charset="utf-8">
+    <title>My Favorites!</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="main.css">
+    
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="modal.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+          $('[data-toggle="popover"]').popover()
+        })
+    </script>
+    
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main Page Content -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">My Favorites</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            
+    <li><a href="movie.html">Movies</a></li>
+    <li class="active"><a href="tv.html">Television<span class="sr-only">(current)</span></a></li>
+
+          </ul>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 content-tile text-center" data-trailer-youtube-id="0d1zpt6k5OI" data-toggle="modal" data-target="#trailer">
+    <img src="https://image.tmdb.org/t/p/w500/z2iR0vmuoEU5eL2ONwygDuzzlOy.jpg" width="220" height="342">
+    <h2 data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="Before there was Batman, there was GOTHAM. 
+
+Everyone knows the name Commissioner Gordon. He is one of the crime world's greatest foes, a man whose reputation is synonymous with law and order. But what is known of Gordon's story and his rise from rookie detective to Police Commissioner? What did it take to navigate the multiple layers of corruption that secretly ruled Gotham City, the spawning ground of the world's most iconic villains? And what circumstances created them  the larger-than-life personas who would become Catwoman, The Penguin, The Riddler, Two-Face and The Joker? ">Gotham</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 content-tile text-center" data-trailer-youtube-id="aZxhA_Jihmw" data-toggle="modal" data-target="#trailer">
+    <img src="https://image.tmdb.org/t/p/w500/9ZuWc3wWPDvWWterM0DlQxjhCBR.jpg" width="220" height="342">
+    <h2 data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only "meta-human" who was created in the wake of the accelerator explosion -- and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won't be long before the world learns what Barry Allen has become...The Flash.">The Flash</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 content-tile text-center" data-trailer-youtube-id="T3T-evQZiQo" data-toggle="modal" data-target="#trailer">
+    <img src="https://image.tmdb.org/t/p/w500/n82soKV5XS5iYXF60eDO84kLPF3.jpg" width="220" height="342">
+    <h2 data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="Agent Phil Coulson of S.H.I.E.L.D. (Strategic Homeland Intervention, Enforcement and Logistics Division) puts together a team of agents to investigate the new, the strange and the unknown around the globe, protecting the ordinary from the extraordinary.">Marvel's Agents of S.H.I.E.L.D.</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 content-tile text-center" data-trailer-youtube-id="hTv13EjlLNg" data-toggle="modal" data-target="#trailer">
+    <img src="https://image.tmdb.org/t/p/w500/mo0FP1GxOFZT4UDde7RFDz5APXF.jpg" width="220" height="342">
+    <h2 data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="Arrow is an American action adventure television series that follows billionaire playboy Oliver Queen, portrayed by Stephen Amell, who, after five years of being stranded on a hostile island, returns home to fight crime and corruption as a secret vigilante whose weapon of choice is a bow and arrows. Arrow will also feature appearances by other DC Comics characters. To assist in promotion, a preview comic book was released to tie into the television series.">Arrow</h2>
+</div>
+
+    </div>
+  </body>
+</html>
