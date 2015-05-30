@@ -22,6 +22,7 @@
             $(this).next("div").show("fast", showNext);
           });
         });
+        // Activates the popover data-toggles
         $(document).ready(function () {
           $('[data-toggle="popover"]').popover();
         });
