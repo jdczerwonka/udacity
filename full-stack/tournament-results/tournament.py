@@ -1,7 +1,5 @@
 #!/usr/bin/env python
-# 
 # tournament.py -- implementation of a Swiss-system tournament
-#
 
 import psycopg2
 
@@ -15,27 +13,33 @@ def deleteMatches():
     """Remove all the match records from the database."""
     connection = connect()
     cursor = connection.cursor()
-    cursor.execute("DELETE FROM matches;")
+    query = "TRUNCATE matches RESTART IDENTITY;"
+    cursor.execute(query)
     connection.commit()
     connection.close()
+
 
 def deletePlayers():
     """Remove all the player records from the database."""
     connection = connect()
     cursor = connection.cursor()
-    cursor.execute("DELETE FROM players;")
+    query = "TRUNCATE players RESTART IDENTITY;"
+    cursor.execute(query)
     connection.commit()
     connection.close()
+
 
 def countPlayers():
     """Returns the number of players currently registered."""
     connection = connect()
     cursor = connection.cursor()
-    cursor.execute("SELECT count(player_id) as player_count FROM players;")
+    query = "SELECT count(player_id) as player_count FROM players;"
+    cursor.execute(query)
     player_count = cursor.fetchone()
     connection.close()
 
     return int(player_count[0])
+
 
 def registerPlayer(name):
     """Adds a player to the tournament database.
@@ -49,9 +53,12 @@ def registerPlayer(name):
 
     connection = connect()
     cursor = connection.cursor()
-    cursor.execute("INSERT INTO players (player_name) VALUES (%s);",(name,))
+    query = "INSERT INTO players (player_name) VALUES (%s);"
+    param = (name,)
+    cursor.execute(query, param)
     connection.commit()
     connection.close()
+
     
 def playerStandings():
     """Returns a list of the players and their win records, sorted by wins.
@@ -69,11 +76,13 @@ def playerStandings():
 
     connection = connect()
     cursor = connection.cursor()
-    cursor.execute("SELECT players.player_id, players.player_name, win_view.win_num, win_view.win_num + loss_view.loss_num AS match_num FROM players, win_view, loss_view WHERE players.player_id = win_view.player_id AND players.player_id = loss_view.player_id ORDER BY win_num DESC;")
+    query = "standings_view;"
+    cursor.execute(query)
     standings = cursor.fetchall()
     connection.close()
 
     return standings
+
 
 def reportMatch(winner, loser):
     """Records the outcome of a single match between two players.
@@ -85,9 +94,12 @@ def reportMatch(winner, loser):
     
     connection = connect()
     cursor = connection.cursor()
-    cursor.execute("INSERT INTO matches (winner_id, loser_id) VALUES (%s, %s);" , (winner,loser))
+    query = "INSERT INTO matches (winner_id, loser_id) VALUES (%s, %s);"
+    param = (winner, loser)
+    cursor.execute(query, param)
     connection.commit()
     connection.close()
+
  
 def swissPairings():
     """Returns a list of pairs of players for the next round of a match.
@@ -108,8 +120,7 @@ def swissPairings():
     standings = playerStandings()
     pairings = []
 
-    for x in range(0,len(standings),2):
-        pairings.append( ( standings[x][0], standings[x][1], standings[x + 1][0], standings[x + 1][1] ) )
+    for x in range(0, len(standings), 2):
+        pairings.append((standings[x][0], standings[x][1], standings[x + 1][0], standings[x + 1][1]))
 
     return pairings
-    
