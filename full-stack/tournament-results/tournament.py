@@ -23,7 +23,7 @@ def deletePlayers():
     """Remove all the player records from the database."""
     connection = connect()
     cursor = connection.cursor()
-    query = "TRUNCATE players RESTART IDENTITY;"
+    query = "TRUNCATE players CASCADE;"
     cursor.execute(query)
     connection.commit()
     connection.close()
@@ -76,7 +76,7 @@ def playerStandings():
 
     connection = connect()
     cursor = connection.cursor()
-    query = "standings_view;"
+    query = "SELECT * FROM standings_view;"
     cursor.execute(query)
     standings = cursor.fetchall()
     connection.close()
