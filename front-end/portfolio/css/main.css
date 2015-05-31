@@ -1,53 +1,53 @@
-body{
-	font-family: 'Lato', sans-serif;
+body {
+	font-family: "Lato", sans-serif;
 	font-weight: 400;
 	color: #313131;
 }
 
-a{
+a {
 	color: #313131;
 }
 
-a:hover{
-	color: #BCBBBB;
+a:hover {
+	color: #bcbbbb;
 	text-decoration: none;
 }
 
-.text-super{
+.text-super {
 	font-size: 60px;
 }
 
-.text-thin{
+.text-thin {
 	font-weight: 100;
 }
 
-.text-muted{
-	color: #BCBBBB;
+.text-muted {
+	color: #bcbbbb;
 }
 
-.title-logo{
+.title-logo {
 	margin-top: 20px;
 }
 
-.container-max-width{
+.container-max-width {
 	max-width: 950px;
 }
 
-.hr-thick{
+.hr-thick {
 	height: 3px;
-	background-color: #BCBBBB;
+	background-color: #bcbbbb;
 }
 
 @media only screen and (max-width:600px) {
-	.xxs-hide{
+	.xxs-hide {
 		display: none;
 	}
 
-	.xxs-col-12{
+	.xxs-col-12 {
 		width: 100%;
 	}
 
-	.text-super{
+	.text-super {
 		font-size: 40px;
 	}
 }
