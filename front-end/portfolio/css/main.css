@@ -1,0 +1,53 @@
+body{
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	color: #313131;
+}
+
+a{
+	color: #313131;
+}
+
+a:hover{
+	color: #BCBBBB;
+	text-decoration: none;
+}
+
+.text-super{
+	font-size: 60px;
+}
+
+.text-thin{
+	font-weight: 100;
+}
+
+.text-muted{
+	color: #BCBBBB;
+}
+
+.title-logo{
+	margin-top: 20px;
+}
+
+.container-max-width{
+	max-width: 950px;
+}
+
+.hr-thick{
+	height: 3px;
+	background-color: #BCBBBB;
+}
+
+@media only screen and (max-width:600px) {
+	.xxs-hide{
+		display: none;
+	}
+
+	.xxs-col-12{
+		width: 100%;
+	}
+
+	.text-super{
+		font-size: 40px;
+	}
+}
