@@ -19,19 +19,19 @@ var projects = {
 			"title":"Portfolio",
 			"dates":"May 2015",
 			"description":"Built a portfolio to display my apps.",
-			"images": ""
+			"image": "images/portfolio.jpg"
 		},
 		{
 			"title":"Movie Trailer Website",
 			"dates":"May 2015",
 			"description":"Built a website that displays my favorite movies and tv shows.",
-			"images": ""			
+			"image": "images/movie_trailer_website.jpg"			
 		},
 		{
 			"title":"Tournament Results",
 			"dates":"May 2015",
 			"description":"Built a database and functions to manage a Swiss style tournament.",
-			"images": ""			
+			"image": "images/tournament_results.jpg"			
 		}
 	]
 };

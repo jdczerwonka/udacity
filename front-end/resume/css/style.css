@@ -176,6 +176,14 @@ ul {
   display: none;
 }
 
+.project-image {
+  border: #F5AE23 solid;
+  height: auto;
+  width: auto;
+  max-width: 150px;
+  max-height: 150px;
+}
+
 img {
   padding: 10px;
 }
